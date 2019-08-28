@@ -43,6 +43,20 @@ type Query {
   post(where: PostWhereUniqueInput!): Post
 }
 
+input RoleCreateOneWithoutRoleInput {
+  connect: RoleWhereUniqueInput
+  create: RoleCreateWithoutUsersInput
+}
+
+input RoleCreateWithoutUsersInput {
+  id: ID
+  name: String
+}
+
+input RoleWhereUniqueInput {
+  id: ID
+}
+
 type User {
   email: String!
   id: ID!
@@ -55,4 +69,5 @@ input UserCreateInput {
   id: ID
   name: String
   posts: PostCreateManyWithoutPostsInput
+  role: RoleCreateOneWithoutRoleInput
 }

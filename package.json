@@ -4,12 +4,13 @@
   "license": "MIT",
   "dependencies": {
     "@prisma/nexus": "^0.0.1",
+    "dotenv": "^8.1.0",
     "graphql-yoga": "^1.16.1"
   },
   "scripts": {
     "start": "node src/index.js",
     "seed": "node prisma/seed.js",
-    "postinstall": "prisma2 generate && prisma2 lift up"
+    "postinstall": "export DEBUG=* && prisma2 generate && prisma2 lift up"
   },
   "devDependencies": {
     "graphql": "^0.13.0",

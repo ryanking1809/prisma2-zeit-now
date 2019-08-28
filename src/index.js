@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { GraphQLServer } = require('graphql-yoga')
 const { join } = require('path')
 const { makeSchema, objectType, idArg, stringArg } = require('@prisma/nexus')
@@ -145,5 +146,5 @@ const server = new GraphQLServer({
   },
 })
 
-server.start(() => console.log(`🚀 Server ready at http://localhost:4000x`))
+server.start(() => console.log(`🚀 Server ready at http://localhost:4000`))
 module.exports = { User, Post }
