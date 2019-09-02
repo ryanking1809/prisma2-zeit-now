@@ -39,5 +39,4 @@ model Role {
 
 model Account {
   id    String  @default(cuid()) @id @unique
-  name String
 }

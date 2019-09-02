@@ -2,6 +2,19 @@
 ### Do not make changes to this file directly
 
 
+input AccountCreateOneWithoutAccountInput {
+  connect: AccountWhereUniqueInput
+  create: AccountCreateWithoutUserInput
+}
+
+input AccountCreateWithoutUserInput {
+  id: ID
+}
+
+input AccountWhereUniqueInput {
+  id: ID
+}
+
 """DateTime"""
 scalar DateTime
 
@@ -65,6 +78,7 @@ type User {
 }
 
 input UserCreateInput {
+  account: AccountCreateOneWithoutAccountInput
   email: String!
   id: ID
   name: String
